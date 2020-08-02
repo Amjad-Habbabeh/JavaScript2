@@ -18,25 +18,61 @@
 
 function createBookList(books) {
   // your code goes in here, return the ul element
+  let ul = document.createElement('ul');
+
+  books.forEach((element) => {
+    let li = document.createElement('li');
+    let p = document.createElement('p');
+    let title = element.title;
+    let author = element.author;
+    let img = document.createElement('img');
+    if (title === 'The Design of Everyday Things') {
+      img.src = './img/design.jpg';
+    } else if (title === 'The Most Human Human') {
+      img.src = './img/themosthuman.jpg';
+    } else {
+      img.src = './img/pragmatic.jpg';
+    }
+    if (element.alreadyRead) {
+      li.style.backgroundColor = 'green';
+    } else {
+      li.style.backgroundColor = 'red';
+    }
+    li.style.listStyle = 'none';
+    li.style.width = 'calc(25% - 51px)';
+    li.style.minWidth = '350px';
+    li.style.margin = '15px';
+    li.style.padding = '10px';
+    ul.style.display = 'flex';
+    p.appendChild(document.createTextNode(`${title} - ${author}`));
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+  });
+
+  return ul;
 }
 
-const books = [{
+const books = [
+  {
     title: 'The Design of Everyday Things',
     author: 'Don Norman',
-    alreadyRead: false
+    alreadyRead: false,
   },
   {
     title: 'The Most Human Human',
     author: 'Brian Christian',
-    alreadyRead: true
+    alreadyRead: true,
   },
   {
     title: 'The Pragmatic Programmer',
     author: 'Andrew Hunt',
-    alreadyRead: true
-  }
+    alreadyRead: true,
+  },
 ];
+
+// createBookList(books);
 
 let ulElement = createBookList(books);
 
-document.querySelector("#bookList").appendChild(ulElement);
+document.querySelector('#bookList').appendChild(ulElement);

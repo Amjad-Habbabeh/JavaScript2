@@ -10,9 +10,25 @@
   4. Have the function execute when it 's loading in the browser
 
  */
+let span = document.createElement('span');
+document.body.appendChild(span);
+function addZero(num) {
+  if (num < 10) {
+    num = `0${num}`;
+  } else {
+    num = num;
+  }
+  return num;
+}
 
 function displayCurrentTime() {
   // your code goes in here
+  let today = new Date();
+  let HH = today.getHours();
+  let MM = today.getMinutes();
+  let SS = today.getSeconds();
+  let currentTime = `${addZero(HH)}:${addZero(MM)}:${addZero(SS)}`;
+  span.innerText = currentTime;
 }
 
 setInterval(displayCurrentTime, 1000);
