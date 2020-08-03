@@ -14,6 +14,10 @@
 
 function hijackGoogleLogo() {
   // your code goes in here
+  let logoId = document.getElementById('logo-default');
+  logoId.style.backgroundImage = 'url(https://www.hackyourfuture.dk/static/logo-dark.svg)';
+  logoId.style.width = '400px';
+  logoId.style.height = '225px';
 }
 
 hijackGoogleLogo();
