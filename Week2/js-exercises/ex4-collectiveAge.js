@@ -10,24 +10,33 @@
 
 function collectiveAge(people) {
   // return the sum of age for all the people
+  function callBack(ages) {
+    let totalAges = ages.reduce((previous, current) => previous + current, 0);
+    return totalAges;
+  }
+  ages = people.map((person) => person.age);
+  // console.log(ages);
+  return callBack(ages);
+  // callBack(people);
 }
 
-const hackYourFutureMembers = [{
+const hackYourFutureMembers = [
+  {
     name: 'Wouter',
-    age: 33
+    age: 33,
   },
   {
     name: 'Federico',
-    age: 32
+    age: 32,
   },
   {
     name: 'Noer',
-    age: 27
+    age: 27,
   },
   {
     name: 'Tjebbe',
-    age: 22
+    age: 22,
   },
 ];
 
-console.log("The collective age of the HYF team is: " + collectiveMembers(hackYourFutureMembers));
+console.log('The collective age of the HYF team is: ' + collectiveAge(hackYourFutureMembers));
