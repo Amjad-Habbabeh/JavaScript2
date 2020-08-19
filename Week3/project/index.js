@@ -9,7 +9,8 @@ const each = document.getElementById('each');
 
 bot.addEventListener('click', calc);
 
-function calc() {
+function calc(e) {
+  e.preventDefault();
   let bill = Number(input.value);
   let tip = Number(service.value) / 100;
   let people = peoples.value;
@@ -23,7 +24,6 @@ function calc() {
       if (people == 1) {
         each.style.display = 'none';
         total = bill + bill * tip;
-
         document.getElementById('total').innerText = `${total}`;
       } else {
         each.style.display = 'block';

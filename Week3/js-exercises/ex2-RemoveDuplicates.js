@@ -14,23 +14,36 @@ does not return anything but removes any duplicate elements from the array.
 
 function removeDuplicates(arr) {
   arr = arr.sort();
-  console.log(arr);
 
   for (let i = 0; i < arr.length - 1; i++) {
     if (arr[i] === arr[i + 1]) {
       arr.splice(i + 1, 1);
     }
   }
-  console.log(arr);
+  return arr;
 }
 
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
 removeDuplicates(letters);
+// if (letters === ['a', 'b', 'c', 'd', 'e', 'f']) {
+//   console.log('Hooray!'); // this is will not work !my way is:
 
-if (letters === ['a', 'b', 'c', 'd', 'e', 'f']) {
-  //i don't know why it dosent log Horray!!
+function identical(arr1, arr2) {
+  // returns true if both arrays are identical
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return false;
+      }
+    }
+  } else {
+    return false;
+  }
+  return true;
+}
+let expectArry = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+if (identical(letters, expectArry)) {
   console.log('Hooray!');
-} else {
-  console.log(letters);
 }
