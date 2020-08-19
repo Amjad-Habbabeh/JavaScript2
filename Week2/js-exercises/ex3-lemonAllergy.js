@@ -13,7 +13,7 @@
 
 function takeOutLemons(basket) {
   // your code goes in here. The output is a string
-  basketoutLemon = basket.filter((item) => item !== 'Lemon');
+  let basketoutLemon = basket.filter((item) => item !== 'Lemon');
   return `My mom bought me a fruit basket, containing ${basketoutLemon.join(', ')}!`;
 }
 
