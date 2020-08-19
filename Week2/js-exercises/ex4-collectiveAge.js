@@ -10,14 +10,13 @@
 
 function collectiveAge(people) {
   // return the sum of age for all the people
-  function callBack(ages) {
+  function sum(ages) {
     let totalAges = ages.reduce((previous, current) => previous + current, 0);
     return totalAges;
   }
-  ages = people.map((person) => person.age);
-  // console.log(ages);
-  return callBack(ages);
-  // callBack(people);
+  ages = people
+  .map((person) => person.age);
+  return sum(ages);
 }
 
 const hackYourFutureMembers = [
