@@ -27,11 +27,11 @@ timer.innerText = minutes.innerText + ':' + '0' + sec;
 // function display minutes and seconds in the timer"
 
 function showTime() {
-  timer.innerText = parseFloat(min) + ':' + '0' + sec;
+  timer.innerText = min + ':' + '0' + sec;
   if (sec < 10) {
-    timer.innerText = parseFloat(min) + ':' + '0' + sec;
+    timer.innerText = min + ':' + '0' + sec;
   } else {
-    timer.innerText = parseFloat(min) + ':' + sec;
+    timer.innerText = min + ':' + sec;
   }
 }
 // event lestener:
@@ -108,7 +108,7 @@ function interval() {
         if (sec > 10) {
           sec = sec - 1;
           timer.innerText = parseFloat(min) - 1 + ':' + sec;
-        } else if (sec <= 10 && sec > 1) {
+        } else if (sec <= 10 && sec >= 1) {
           sec = sec - 1;
           timer.innerText = parseFloat(min) - 1 + ':0' + sec;
         } else if (parseFloat(min) !== 1) {
@@ -121,7 +121,7 @@ function interval() {
           timer.innerText = 'Time is up!';
         }
       } else if (playing === false && pausing === true) {
-        pausing === true;
+        pausing = true;
       } else {
         clearInterval(start);
         showTime();
