@@ -13,8 +13,8 @@ Call the function three times. The return values should be:
 function createBase(x) {
   // Put here your logic...
   const closure = function (y) {
-    const addNumber = y + x;
-    return addNumber;
+    x = y + x;
+    return x;
   };
 
   return closure;
