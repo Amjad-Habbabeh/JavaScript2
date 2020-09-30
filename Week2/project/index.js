@@ -27,7 +27,6 @@ timer.innerText = minutes.innerText + ':' + '0' + sec;
 // function display minutes and seconds in the timer"
 
 function showTime() {
-  timer.innerText = min + ':' + '0' + sec;
   if (sec < 10) {
     timer.innerText = min + ':' + '0' + sec;
   } else {
@@ -39,7 +38,7 @@ function showTime() {
 // up button:
 
 up.addEventListener('click', () => {
-  if (playing === false) {
+  if (playing === false && pausing === false) {
     sec = 0;
     min = parseFloat(min) + 1;
     minutes.innerText = min;
@@ -51,7 +50,7 @@ up.addEventListener('click', () => {
 // down button:
 
 down.addEventListener('click', () => {
-  if (playing === false) {
+  if (playing === false && pausing === false) {
     sec = 0;
 
     if (parseFloat(minutes.innerText) - 1 > 0) {
