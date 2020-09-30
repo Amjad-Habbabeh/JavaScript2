@@ -12,6 +12,7 @@
  */
 let span = document.createElement('span');
 document.body.appendChild(span);
+
 function addZero(num) {
   if (num < 10) {
     num = `0${num}`;

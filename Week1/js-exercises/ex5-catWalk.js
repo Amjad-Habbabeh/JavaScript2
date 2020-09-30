@@ -15,8 +15,6 @@
 let img = document.querySelector('img');
 let reference = img.src;
 
-console.log(reference);
-console.log(img);
 let leftInc = 0;
 img.style.left = `${leftInc}px`;
 let walking = true;
@@ -36,9 +34,7 @@ function catWalk() {
       'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif?itemid=10561424';
 
     clearInterval(id);
-    const start = Date.now();
     setTimeout(() => {
-      const millis = Date.now() - start;
       img.src = reference;
       id = setInterval(catWalk, 50);
     }, 5000);
